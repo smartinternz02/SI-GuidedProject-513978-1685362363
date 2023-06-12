@@ -9,23 +9,24 @@ import numpy as np
 import pickle
 import pandas as pd
 
-app = Flask(__name__)
-model = pickle.load(open(r"C:\Users\LenSam\Appliedds\Flask/milk.pkl",'rb'))
+model = pickle.load(open(r"E:/milk grading system files/Flask/milk.pkl",'rb'))
 
- 
+app = Flask(__name__)
+
 
 @app.route("/")
 def about():
     return render_template('home.html')
 
 
-
+@app.route("/")
+def home():
+    return render_template('home.html')
+ 
+    
 @app.route("/predict")      
 def home1():
     return render_template('predict.html')
-
-
-
 
 
 @app.route("/pred", methods=['POST','GET'])
